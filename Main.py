@@ -427,7 +427,7 @@ async def start_handler(message: Message, state: FSMContext):
 
     await message.answer(
         "🎀 <b>🐣🎀𝐇ᴇ𝐋ʟᴏ 𝐌ᴇ𝐑ᴇ 𝐊ᴜᴄʜᴜ 𝐏ᴜᴄʜᴜ ♡🎀🥰 𝐒ᴡᴀɢᴀᴛ 𝐇ᴀɪ 𝐀ᴘᴋᴀ 𝐘ᴀʜᴀ 𝐏ᴀʀ🧸💞</b> 🎀\n\n"
-        "Neeche keyboard se option select karo 👇",
+        "Neeche option select karo 👇",
         reply_markup=user_keyboard(),
     )
 
@@ -550,9 +550,9 @@ async def receive_channel(message: Message, state: FSMContext):
 # ADMIN: START DROP / DROP NAME
 # ============================================================
 
-@dp.message(F.text == "➕ Drop Name")
+@dp.message(F.text == "➕ Drop Name", F.from_user.id == ADMIN_ID)
 async def admin_drop_name(message: Message, state: FSMContext):
-    if message.chat.type != ChatType.PRIVATE or not await admin_only(message):
+    if message.chat.type != ChatType.PRIVATE:
         return
 
     await state.clear()
@@ -581,7 +581,7 @@ async def admin_drop_name(message: Message, state: FSMContext):
     await bot.send_message(
         chat_id,
         "🔥 <b>NAME DROP STARTED</b> 🔥\n\n"
-        "Apna naam drop karne ke liye neeche button dabao 👇\n\n"
+        " neeche button dabao 👇\n\n"
         "⚠️ Naam <b>private chat</b> me submit hoga.",
         reply_markup=open_bot_keyboard(me.username),
     )
@@ -589,7 +589,7 @@ async def admin_drop_name(message: Message, state: FSMContext):
     await message.answer(
         "✅ <b>Name Drop Started</b>\n\n"
         f"📢 {html.escape(title)}\n\n"
-        "Channel me Drop Name message bhej diya gaya.",
+        "done ✅ .",
         reply_markup=admin_keyboard(),
     )
 
@@ -603,7 +603,7 @@ async def user_drop_name(message: Message, state: FSMContext):
     if message.chat.type != ChatType.PRIVATE:
         await message.answer(
             "❌ Name private chat me submit hoga.\n"
-            "Bot ki private chat open karo."
+            "Bot open kro /start bhejo."
         )
         return
 
