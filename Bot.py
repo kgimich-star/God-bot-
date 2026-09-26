@@ -426,7 +426,7 @@ async def start_handler(message: Message, state: FSMContext):
         return
 
     await message.answer(
-        "🎀 <b>WELCOME</b> 🎀\n\n"
+        "🎀 <b>🐣🎀𝐇ᴇ𝐋ʟᴏ 𝐌ᴇ𝐑ᴇ 𝐊ᴜᴄʜᴜ 𝐏ᴜᴄʜᴜ ♡🎀🥰 𝐒ᴡᴀɢᴀᴛ 𝐇ᴀɪ 𝐀ᴘᴋᴀ 𝐘ᴀʜᴀ 𝐏ᴀʀ🧸💞</b> 🎀\n\n"
         "Neeche keyboard se option select karo 👇",
         reply_markup=user_keyboard(),
     )
@@ -623,7 +623,7 @@ async def user_drop_name(message: Message, state: FSMContext):
 
     await message.answer(
         "✍️ <b>Apna naam bhejo:</b>\n\n"
-        "Example: <code>Arjun</code>",
+        "Example: <code>godx</code>",
         reply_markup=ForceReply(
             selective=True,
             input_field_placeholder="Apna naam...",
