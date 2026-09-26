@@ -420,7 +420,7 @@ async def start_handler(message: Message, state: FSMContext):
 
         await message.answer(
             "🔥 <b>NAME DROP OPEN</b> 🔥\n\n"
-            "Neeche <b>➕ Drop Name</b> dabao aur apna naam bhejo.",
+            "Neeche <b>➕ Drop Name</b> aam bhejo.",
             reply_markup=user_keyboard(),
         )
         return
@@ -553,7 +553,7 @@ async def receive_channel(message: Message, state: FSMContext):
 @dp.message(F.text == "➕ Drop Name", F.from_user.id == ADMIN_ID)
 async def admin_drop_name(message: Message, state: FSMContext):
     if message.chat.type != ChatType.PRIVATE:
-        return
+        return 
 
     await state.clear()
 
